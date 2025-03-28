@@ -6,8 +6,8 @@ public class Pengguna {
     private String nama;
     private int nomorPin;
     private int pembelian;
-    private  boolean aktif;
-    private  int autentikasiCount = 0;
+    private boolean aktif;
+    private int autentikasiCount = 0;
     private  static int jumlahObjek = 0;
     
     public Pengguna(double saldo, String nomorRek, String nama, int nomorPin){
@@ -53,10 +53,10 @@ public class Pengguna {
                     }
                     System.out.println("Pembayaran Berhasil");
                     System.out.println("Saldo anda sisa: " + saldo);
-                } else if (aktif = false) {
-                    System.out.println("Akun sudah terblokir");
                 }
             }
+        } else if (aktif = false) {
+            System.out.println("Akun sudah terblokir");
         }
            
         
@@ -94,6 +94,7 @@ public class Pengguna {
         autentikasiCount++;
         System.out.println("Verifikasi Salah Coba Lagi");
         if (autentikasiCount >= 3) {
+            System.out.println("Anda terlalu banyak melakukan verifikasi, Akun terblokir");
             aktif = false;
         }
     }

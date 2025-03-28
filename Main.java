@@ -31,27 +31,27 @@ public class Main {
                             break;
                         }
                     }
+                    
                     if (PenggunaDitemukan == null) {
                         System.out.println("Pengguna tidak ditemukan");
-                        break;
+                       
                     }
-                    if (!PenggunaDitemukan.equals(null) && PenggunaDitemukan.getAktif() == true) {
+
+                    if (PenggunaDitemukan != (null) && PenggunaDitemukan.getAktif() == true) {
                         System.out.print("Masukan Pin: ");
                         int pin = input.nextInt();
                         if (PenggunaDitemukan.getNomorPin() == pin) {
                             System.out.print("Masukan nominal pembelian: ");
                             int pembelian = input.nextInt();
                             PenggunaDitemukan.Bayar(pembelian);
+                            
                         } else if (PenggunaDitemukan.getNomorPin() != pin) {
                             PenggunaDitemukan.ErrorAuth();
-                            break;
                         }
-                    }
-
-                    if (!PenggunaDitemukan.equals(null) && PenggunaDitemukan.getAktif() == false) {
-                        System.out.println("Akun Terblokir");
                         break;
                     }
+
+
                     break;
         
                 
@@ -68,8 +68,8 @@ public class Main {
                 }
                 if (PenggunaDitemukan == null) {
                     System.out.println("Pengguna tidak ditemukan");
-                    break;
                 }
+
                 if (!PenggunaDitemukan.equals(null) && PenggunaDitemukan.getAktif() == true) {
                     System.out.print("Masukan Pin: ");
                     int pin = input.nextInt();
@@ -79,18 +79,15 @@ public class Main {
                         PenggunaDitemukan.TopUp(topup);
                     } else if (PenggunaDitemukan.getNomorPin() != pin) {
                         PenggunaDitemukan.ErrorAuth();
-                        break;
+                        
                     }
-                }
-
-                if (!PenggunaDitemukan.equals(null) && PenggunaDitemukan.getAktif() == false) {
-                    System.out.println("Akun Terblokir");
                     break;
                 }
-
                 break;
+
                 case 3:
                     System.out.println("Program Selesai!");
+                    input.close();
                     return;
                 default:
                     System.out.println("Input salah coba lagi!");
